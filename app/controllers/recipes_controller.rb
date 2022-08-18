@@ -23,8 +23,8 @@ class RecipesController < ApplicationController
     the_recipe.title = params.fetch("query_title")
     the_recipe.body = params.fetch("query_body")
     the_recipe.category_id = params.fetch("query_category_id")
-    the_recipe.user_id = params.fetch("query_user_id")
-    the_recipe.comments_count = params.fetch("query_comments_count")
+    the_recipe.user_id = session.fetch(:user_id)
+   
 
     if the_recipe.valid?
       the_recipe.save
