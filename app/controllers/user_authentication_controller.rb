@@ -42,7 +42,7 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.username = params.fetch("query_username")
-    @user.recipes_count = params.fetch("query_recipes_count")
+   
 
     save_status = @user.save
 
@@ -65,7 +65,7 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.username = params.fetch("query_username")
-    @user.recipes_count = params.fetch("query_recipes_count")
+   
     
     if @user.valid?
       @user.save
