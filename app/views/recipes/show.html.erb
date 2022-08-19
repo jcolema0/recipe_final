@@ -23,7 +23,7 @@
         Image
       </dt>
       <dd>
-        <img width="400" height="360" src="<%= @the_recipe.image %>">
+        <img width="400" height="180" src="<%= @the_recipe.image %>">
       </dd>
 
       <dt>
@@ -44,7 +44,7 @@
         Category
       </dt>
       <dd>
-        <%= @the_recipe.category_id %>
+        <%= @the_recipe.category.descriptions %>
       </dd>
 
       <dt>
@@ -83,7 +83,7 @@
 
 <div>
   <div>
-    <% if @user == session.fetch( :user_id) %>
+    <% if @the_recipe.user_id == session.fetch( :user_id) %>
     <h2>
       Edit recipe
     </h2>
@@ -121,13 +121,7 @@
         <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_recipe.category_id %>">
       </div>
 
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_recipe.user_id %>">
-      </div>
+     
 
      
 
@@ -137,7 +131,7 @@
     </form>
   </div>
 </div>
-else
+<% else %>
 <% end %>
 
 <h2>Comments</h2>
@@ -176,7 +170,7 @@ else
   <input id="query_recipe_id" type="text" value="<%= @the_recipe.id %>" name="query_recipe_id">
 
   <label for="browser_comment">Comment</label>
-  <textarea id="query_body" name="query_body" placeholder="Enter a comment..."></textarea>
+  <textarea id="browser_comment" name="query_comment" placeholder="Enter a comment..."></textarea>
 
   <button>Add comment</button>
 </form>

@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   def create
     the_comment = Comment.new
     the_comment.user_id = session.fetch( :user_id)
-    the_comment.body = params.fetch("query_body")
+    the_comment.body = params.fetch("query_comment")
     the_comment.recipe_id = params.fetch("query_recipe_id")
 
     if the_comment.valid?
