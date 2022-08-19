@@ -13,6 +13,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sprockets', '< 4'
 gem 'sassc-rails'
 gem 'faker'
+gem 'simple_format', '~> 0.0.2'
 
 group :development do
   gem 'htmlbeautifier'

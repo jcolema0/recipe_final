@@ -23,7 +23,7 @@
         Image
       </dt>
       <dd>
-        <%= @the_recipe.image %>
+        <img width="400" height="360" src="<%= @the_recipe.image %>">
       </dd>
 
       <dt>
@@ -83,6 +83,7 @@
 
 <div>
   <div>
+    <% if @user == session.fetch( :user_id) %>
     <h2>
       Edit recipe
     </h2>
@@ -128,13 +129,7 @@
         <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_recipe.user_id %>">
       </div>
 
-      <div>
-        <label for="comments_count_box">
-          Comments count
-        </label>
-
-        <input type="text" id="comments_count_box" name="query_comments_count" value="<%= @the_recipe.comments_count %>">
-      </div>
+     
 
       <button>
         Update recipe
@@ -142,6 +137,8 @@
     </form>
   </div>
 </div>
+else
+<% end %>
 
 <h2>Comments</h2>
 
